@@ -1,0 +1,131 @@
+body {
+    font-family: "Exo 2", Arial, sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menubar {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0;
+    background-color: rgb(41, 36, 34);
+    position: fixed;
+    top: 0;
+}
+
+/*removes bullets*/
+.menubar, .dropdown_menu {
+    list-style-type: none;
+}
+
+/*hides dropdown menu by default*/
+.dropdown_menu {
+    visibility: hidden;
+}
+
+/*removes underline*/
+a { text-decoration: none; }
+
+.menubar li {
+    display: inline-block;
+    position: relative;
+    background-color: rgb(250, 239, 216);
+    border-radius: 3px;
+}
+
+/*changes color of button when hovered over*/
+.menubar li:hover {
+    background-color: white;
+}
+
+.menubar li:hover .dropdown_menu {
+    visibility: visible;
+}
+
+.menubar li a {
+    display: block;
+    height: 40px;
+    width: 120px;
+    padding: 10px;
+    color: rgb(41, 36, 34);
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.dropdown_menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    z-index: 2;
+}
+
+.dropdown_menu li {
+    background-color: rgb(41, 36, 34);
+}
+
+.dropdown_menu li:hover {
+    background-color: grey;
+}
+
+.dropdown_menu li a {
+    color: white;
+}
+
+.container {
+    padding-top: 10px;
+}
+
+.container > a {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    padding: 15px 0;
+    background-color: rgb(41, 36, 34);
+    color: rgb(250, 239, 216);
+    font-weight: bold;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+h1, h2, .container a {
+    text-transform: uppercase;
+}
+
+.jumbotron {
+    background-color: rgb(250, 239, 216);
+    height: 100%;
+    background-image: url(flowers.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 200px 0 100px;
+}
+
+.supporting {
+    padding-top: 15px;
+    padding-bottom: 100px;
+}
+
+.col {
+    display: inline-block;
+    width: 150px;
+    margin: 30px;
+}
+
+.col a {
+    display: block;
+    color: black;
+    font-weight: bold;
+    border: 3px solid black;
+    padding: 10px 0;
+}
+
+footer {
+    background-color: rgb(41, 36, 34);
+    height: 10vh;
+    color: white;
+    font-variant: small-caps;
+}

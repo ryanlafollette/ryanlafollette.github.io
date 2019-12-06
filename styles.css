@@ -1,78 +1,151 @@
+* {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Libre Baskerville", serif;
-    background: center no-repeat url(images/background.jpg);
+    font-size: 100%;
+    background: center /auto 175% no-repeat url(images/background.jpg);
+    display: grid;
+    grid-template-rows: 17.5vh 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 6vw;
+    padding: 0 10vw;
 }
 
 header {
-    text-align: center;
-    padding: 40px 0 15px;
+    grid-row: 1 / 2;
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, .emoji {
+    font-size: 2.5em;
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
+
 }
 
 h1 {
     color: white;
     font-weight: bold;
-    text-shadow: -2px -2px 0 #3f250b, 2px -2px 0 #3f250b, -2px 2px 0 #3f250b, 2px 2px 0 #3f250b;
+    padding: 0 15px;
+    text-align: center;
+}
+
+.emoji {
+    transform: translate(0, -5%);
+}
+
+.biowrapper, .buttonwrapper {
+    background-color: #d2b48c;
+    grid-row: 2 / 3;
+    border: 3px solid #3f250b;
+}
+
+.biowrapper {
+    grid-column: 1 / 2;
+    padding: 10px;
+    height: 570px;
+    overflow: auto;
+}
+
+p {
+    font-size: 1.15em;
+    line-height: 1.5;
+}
+
+.barz {
+    font-size: 1.4em;
+    font-family: 'Franklin Gothic Medium', sans-serif;
+}
+
+.buttonwrapper {
+    grid-column: 2 / 3;
+    height: max-content;
+}
+
+a {
+    text-decoration: none;
 }
 
 h2 {
+    font-size: 2em;
     color: white;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
 }
 
-.bio {
-    padding-top: 10px;
-    margin-right: 10px;
+ul {
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    height: 100%;
+    padding: 10px;
 }
 
-.buttons {
-    margin-left: 10px;
+li {
+    list-style-type: none;
+    grid-column: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 175px;
 }
 
-.bio, .buttons {
-    background-color: #d2b48c;
+.writing {
+    grid-row: 1 / 2;
+    background: center /auto 225px no-repeat url(images/writing.jpg);
+}
+
+.music {
+    grid-row: 2 / 3;
+    background: center /auto 225px no-repeat url(images/music.jpg);
+}
+
+.contact {
+    grid-row: 3 / 4;
+    background: center /auto 300px no-repeat url(images/contact.jpg);
 }
 
 #elijah {
     max-height: 200px;
-    padding-right: 10px;
+    float: left;
+    margin-right: 10px;
+    border: 2px solid #3f250b;
 }
 
-.button {
-    max-height: 175px;
-    width: max-content;
-    filter: brightness(50%);
-    margin-top: 10px;
-    position: relative;
+@media only screen and (max-width: 768px) {
+    body {
+        grid-template-rows: 15vh repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+    }
+
+    header {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+    }
+
+    .biowrapper {
+        grid-row: 2 / 3;
+        grid-column: 1 / 2;
+        width: 100%;
+        height: max-content;
+    }
+
+    .buttonwrapper {
+        grid-row: 3 / 4;
+        grid-column: 1 / 2;
+    }
 }
 
-.contact {
-    margin-bottom: 10px;
-}
-
-.info {
-    font-size: 1.15em;
-}
-
-.emoji {
-    display: inline-block;
-    padding: 0 15px;
-}
-
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 530px) {
     .emoji {
-        display: block;
-    }
-}
-
-@media only screen and (max-width: 991px) {
-    .bio, .buttons {
-        margin: 0;
-    }
-
-    .buttons {
-        margin-bottom: 15px;
+        display: none;
     }
 }
